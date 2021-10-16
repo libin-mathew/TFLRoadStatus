@@ -1,4 +1,5 @@
 ﻿using System;
+using TFLRoadStatus.CoreOperations;
 
 namespace TFLRoadStatus
 {
@@ -7,6 +8,15 @@ namespace TFLRoadStatus
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            try
+            {
+                TaskManager.RunAsync("gg").GetAwaiter().GetResult();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
