@@ -10,7 +10,8 @@ namespace TFLRoadStatus
             Console.WriteLine("Hello World!");
             try
             {
-                TaskManager.RunAsync("gg").GetAwaiter().GetResult();
+                TfLRoadStatusChecker checker = new TfLRoadStatusChecker();
+                checker.GetRoadStatus("zczx").GetAwaiter().GetResult();
             }
             catch (Exception)
             {
