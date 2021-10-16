@@ -21,6 +21,10 @@ namespace TFLRoadStatus.InputOutputOperations
         /// <param name="message"></param>
         public void PrintMessageToScreen(string message);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roadStatus"></param>
         public void PrintRoadStatusDetails(RoadStatus roadStatus);
 
         public void PrintInvalidRoadMessage(string roadCode);

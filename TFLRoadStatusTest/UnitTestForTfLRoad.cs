@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace TFLRoadStatusTest
 {
-    public class Tests
+    public class UnitTestForTfLRoad
     {
         [SetUp]
         public void Setup()

@@ -11,7 +11,7 @@ namespace TFLRoadStatus
         /// <summary>
         /// TFL Api Key
         /// </summary>
-        public static readonly string TFLApiKey = ConfigurationManager.AppSettings["TFLApiKey"];
+        public static readonly string TflApiKey = ConfigurationManager.AppSettings["TFLApiKey"];
 
         /// <summary>
         /// App Key
@@ -19,7 +19,7 @@ namespace TFLRoadStatus
         public static readonly string AppKey = ConfigurationManager.AppSettings["AppKey"];
 
         /// <summary>
-        /// App Key
+        /// Api Base Address
         /// </summary>
         public static readonly string ApiBaseAddress = ConfigurationManager.AppSettings["BaseAddress"];
     }

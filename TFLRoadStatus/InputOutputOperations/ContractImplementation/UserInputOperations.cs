@@ -34,13 +34,13 @@ namespace TFLRoadStatus.InputOutputOperations
         /// <param name="roadStatus"></param>
         public void PrintRoadStatusDetails(RoadStatus roadStatus)
         {
-            Console.WriteLine(string.Format("The status of the {0} is as follows", roadStatus.DisplayName));
-            Console.WriteLine(string.Format("Road Status is {0}", roadStatus.StatusSeverity));
-            Console.WriteLine(string.Format("Road Status Description is {0}", roadStatus.StatusSeverityDescription));
+            PrintMessageToScreen(string.Format("The status of the {0} is as follows", roadStatus.DisplayName));
+            PrintMessageToScreen(string.Format("Road Status is {0}", roadStatus.StatusSeverity));
+            PrintMessageToScreen(string.Format("Road Status Description is {0}", roadStatus.StatusSeverityDescription));
         }
         public void PrintInvalidRoadMessage(string roadCode)
         {
-            Console.WriteLine(string.Format("{0} is not a valid Road",roadCode));
+            PrintMessageToScreen(string.Format("{0} is not a valid Road",roadCode));
         }
     }
 }

@@ -10,6 +10,10 @@ using TFLRoadStatus.CoreOperations.Models;
 namespace TFLRoadStatus.CoreOperations
 {
 
+    /// <summary>
+    /// Class to Handle TFL API call and Serialize the Response JSON to Model
+    /// Implementing the interface ITfLRoadStatusChecker
+    /// </summary>
     public class TfLRoadStatusChecker : ITfLRoadStatusChecker
     {
         private static readonly HttpClient HttpClient = new HttpClient();
@@ -29,7 +33,7 @@ namespace TFLRoadStatus.CoreOperations
             RoadStatus roadStatus = new RoadStatus();
             // Uri for Api call
             string apiUrl = string.Format("{0}{1}?app_id={2}&amp;app_key={3}", Constants.ApiBaseAddress, roadId,
-                Constants.AppKey, Constants.TFLApiKey);
+                Constants.AppKey, Constants.TflApiKey);
 
             try
             {
