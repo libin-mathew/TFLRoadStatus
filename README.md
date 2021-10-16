@@ -1,5 +1,5 @@
 # TFL Road Status Finder
-A console application powered by the TFL open data REST API to get the Road status update. Application takes Road Code as the input and prints the Road details such as Road Status and Road Status Description.
+A console application powered by the TFL open data REST API to get the Road status update. Application takes Road Code as the input and prints the Road Status details such as Road Status and Road Status Description.
 
 ### Prerequisites
 Install the following:
