@@ -1,6 +1,5 @@
-﻿
-
-using System;
+﻿using System;
+using TFLRoadStatus.CoreOperations.Models;
 
 namespace TFLRoadStatus.InputOutputOperations
 {
@@ -27,6 +26,21 @@ namespace TFLRoadStatus.InputOutputOperations
         {
             string userInput = Console.ReadLine();
             return userInput;
+        }
+
+        /// <summary>
+        /// Method to Print Road Status Details
+        /// </summary>
+        /// <param name="roadStatus"></param>
+        public void PrintRoadStatusDetails(RoadStatus roadStatus)
+        {
+            Console.WriteLine(string.Format("The status of the {0} is as follows", roadStatus.DisplayName));
+            Console.WriteLine(string.Format("Road Status is {0}", roadStatus.StatusSeverity));
+            Console.WriteLine(string.Format("Road Status Description is {0}", roadStatus.StatusSeverityDescription));
+        }
+        public void PrintInvalidRoadMessage(string roadCode)
+        {
+            Console.WriteLine(string.Format("{0} is not a valid Road",roadCode));
         }
     }
 }

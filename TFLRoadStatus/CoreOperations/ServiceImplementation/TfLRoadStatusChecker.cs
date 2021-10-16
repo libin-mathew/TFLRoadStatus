@@ -9,6 +9,7 @@ using TFLRoadStatus.CoreOperations.Models;
 
 namespace TFLRoadStatus.CoreOperations
 {
+
     public class TfLRoadStatusChecker : ITfLRoadStatusChecker
     {
         private static readonly HttpClient HttpClient = new HttpClient();
@@ -24,10 +25,10 @@ namespace TFLRoadStatus.CoreOperations
             HttpClient.BaseAddress = new Uri(Constants.ApiBaseAddress);
             HttpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-            RoadStatus roadStatus = new RoadStatus();
 
+            RoadStatus roadStatus = new RoadStatus();
             // Uri for Api call
-            string apiUrl = string.Format("{0}{1}?app_id={2}&amp;app_key={3}", Constants.ApiBaseAddress, "A2",
+            string apiUrl = string.Format("{0}{1}?app_id={2}&amp;app_key={3}", Constants.ApiBaseAddress, roadId,
                 Constants.AppKey, Constants.TFLApiKey);
 
             try
@@ -54,7 +55,7 @@ namespace TFLRoadStatus.CoreOperations
         }
 
         /// <summary>
-        /// Serialize Response Json to Model Class
+        /// To Serialize Response Json to Model Class
         /// </summary>
         /// <param name="response"></param>
         /// <returns></returns>
