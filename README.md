@@ -23,7 +23,7 @@ Follow the steps:
 
 ### How to run the output
 Follow the steps:
-- Open Visual Studio Command Prompt and change directory to the Project Root Directory(TFLRoadStatus\TFLRoadStatus).
+- Open Visual Studio Command Prompt and change directory to the TFLRoadStatus Project Directory.
 - Run the comman ***dotnet run***
 - Provide the Road code and hit enter. The application will List the Road Status and Status Description.
 - Application will return an informative error if the user provides an invalid Road Code.
