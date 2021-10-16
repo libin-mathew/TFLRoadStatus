@@ -1,5 +1,5 @@
 # TFL Road Status Finder
-A console application powered by the TFL open data REST API to get the Road status update. Application takes Road Code as the input and prints the Road details such as Road Status and Road Status Description.
+A console application powered by the TFL open data REST API to get the Road status update. Application takes Road Code as the input and prints the Road Status details such as Road Status and Road Status Description.
 
 ### Prerequisites
 Install the following:
@@ -10,8 +10,11 @@ Install the following:
 ### Configuring TFL API Information
 Follow the steps:
 - Open the project in Visual Studio and locate App.config file under TFLRoadStatus project.
-- Configure the file with your TFL API Key by updating the settings key value for TFLApiKey
-- Configure the file with your Application Key by updating the settings key value for AppKey
+- Configure the file with your TFL API Key by updating the settings key value of TFLApiKey.
+- Configure the file with your Application Key by updating the settings key value of AppKey.
+
+If you don't have a TFL API key, you will need to register for a developer key here: https://api-
+portal.tfl.gov.uk/
 
 ### How to build the code
 Follow the steps:
@@ -20,8 +23,8 @@ Follow the steps:
 
 ### How to run the output
 Follow the steps:
-- Open Visual Studio Command Prompt and change directory to the Project Root Directory(TFLRoadStatus\TFLRoadStatus)
+- Open Visual Studio Command Prompt and change directory to the TFLRoadStatus Project Directory.
 - Run the comman ***dotnet run***
 - Provide the Road code and hit enter. The application will List the Road Status and Status Description.
-- Then the application will return an informative error if the user provides an invalid Road Code.
+- Application will return an informative error if the user provides an invalid Road Code.
 - To fetch the exit code in window machine, run command ***echo Exit Code is %errorlevel%***
