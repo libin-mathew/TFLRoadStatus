@@ -23,5 +23,5 @@ Follow the steps:
 - Open Visual Studio Command Prompt and change directory to the Project Root Directory(TFLRoadStatus\TFLRoadStatus)
 - Run the comman ***dotnet run***
 - Provide the Road code and hit enter. The application will List the Road Status and Status Description.
-- Then the application will return an informative error if the user provides an invalid Road Code.
+- Application will return an informative error if the user provides an invalid Road Code.
 - To fetch the exit code in window machine, run command ***echo Exit Code is %errorlevel%***
