@@ -11,12 +11,18 @@ namespace TFLRoadStatus.CoreOperations
 {
 
     /// <summary>
-    /// Class to Handle TFL API call and Serialize the Response JSON to Model
-    /// Implementing the interface ITfLRoadStatusChecker
+    /// Class to Handle TFL API call and Serialize the Response JSON to Model.
+    /// Implementing the interface ITfLRoadStatusChecker.
     /// </summary>
     public class TfLRoadStatusChecker : ITfLRoadStatusChecker
     {
         private static readonly HttpClient HttpClient = new HttpClient();
+        private string baseUrl;
+
+        public TfLRoadStatusChecker()
+        {
+           baseUrl= Constants.ApiBaseAddress;
+        }
 
         /// <summary>
         /// Async Method to call TFL Roads Api

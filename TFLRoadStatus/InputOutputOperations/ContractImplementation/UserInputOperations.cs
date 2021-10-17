@@ -4,8 +4,8 @@ using TFLRoadStatus.CoreOperations.Models;
 namespace TFLRoadStatus.InputOutputOperations
 {
     /// <summary>
-    /// Input Output Operations
-    /// Class implementing IUserInputOperations
+    /// Input Output Operations.
+    /// Class implementing IUserInputOperations.
     /// </summary>
     public class UserInputOperations : IUserInputOperations
     {

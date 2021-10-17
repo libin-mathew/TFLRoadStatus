@@ -4,23 +4,29 @@
 namespace TFLRoadStatus
 {
     /// <summary>
-    /// Static class to hold the constants
+    /// Static class to hold the constants.
     /// </summary>
     public static class Constants
     {
+        static Constants()
+        {
+            TflApiKey = ConfigurationManager.AppSettings["TFLApiKey"];
+            AppKey = AppKey = ConfigurationManager.AppSettings["AppKey"];
+            ApiBaseAddress = ConfigurationManager.AppSettings["BaseAddress"];
+        }
         /// <summary>
         /// TFL Api Key
         /// </summary>
-        public static readonly string TflApiKey = ConfigurationManager.AppSettings["TFLApiKey"];
+        public static readonly string TflApiKey;
 
         /// <summary>
         /// App Key
         /// </summary>
-        public static readonly string AppKey = ConfigurationManager.AppSettings["AppKey"];
+        public static readonly string AppKey;
 
         /// <summary>
         /// Api Base Address
         /// </summary>
-        public static readonly string ApiBaseAddress = ConfigurationManager.AppSettings["BaseAddress"];
+        public static readonly string ApiBaseAddress;
     }
 }

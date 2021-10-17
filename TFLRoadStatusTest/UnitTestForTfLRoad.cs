@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using TFLRoadStatus;
 using TFLRoadStatus.CoreOperations;
 using TFLRoadStatus.CoreOperations.Models;
 using TFLRoadStatus.InputOutputOperations;
@@ -82,8 +83,10 @@ namespace TFLRoadStatusTest
         [Test]
         public void RoadStatusCheck_WithValidRoadCode()
         {
+            TfLRoadStatusChecker checker = new TfLRoadStatusChecker();
+            var baseUrlAddress = Constants.ApiBaseAddress;
             var roadCode = "A2";
-            var roadStatus = _roadStatusChecker.GetRoadStatus(roadCode).GetAwaiter().GetResult();
+            var roadStatus = checker.GetRoadStatus(roadCode).GetAwaiter().GetResult();
             Assert.IsTrue(roadStatus.HttpsStatus);
         }
 

@@ -5,7 +5,7 @@ using TFLRoadStatus.CoreOperations.Models;
 namespace TFLRoadStatus.CoreOperations
 {
     /// <summary>
-    /// Interface to provide concrete implementation for TFL API calls
+    /// Interface to provide concrete implementation for TFL API calls.
     /// </summary>
     public interface ITfLRoadStatusChecker
     {

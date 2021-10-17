@@ -2,7 +2,7 @@
 namespace TFLRoadStatus.CoreOperations.Models
 {
     /// <summary>
-    /// Represent the Road Status Information
+    /// Represent the Road Status Information.
     /// </summary>
     public class RoadStatus
     {
