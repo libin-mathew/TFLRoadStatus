@@ -7,7 +7,7 @@ Install the following:
 -  Visual Studio 2019 version 16.11
 -  Github tool 
 
-### Aditional Nuget Packages
+### Additional Nuget Packages
 Requires following Nuget Packages to run the application.
 - Newtonsoft.Json 13.0.1
 
