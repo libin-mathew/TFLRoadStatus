@@ -1,6 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using TFLRoadStatus.CoreOperations;
 using TFLRoadStatus.CoreOperations.Models;
 using TFLRoadStatus.InputOutputOperations;
 
@@ -9,12 +15,23 @@ namespace TFLRoadStatusTest
     public class UnitTestForTfLRoad
     {
         private UserInputOperations _inputOperations;
+        private TfLRoadStatusChecker _roadStatusChecker = new TfLRoadStatusChecker();
+
         [SetUp]
         public void Setup()
         {
             _inputOperations = new UserInputOperations();
         }
 
+        #region Mock Data
+        public static RoadStatus ValidUserTestData_SucessData()
+        {
+            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TFLSuccessResponse.json");
+            var mockResponse = File.ReadAllText(filePath);
+            var responseObject = JsonConvert.DeserializeObject<List<RoadStatus>>(mockResponse);
+            return responseObject.FirstOrDefault();
+        }
+        #endregion
         #region Tests for IO Operations
 
         [Test]
@@ -50,17 +67,26 @@ namespace TFLRoadStatusTest
         [Test]
         public void PrintRoadStatusDetails()
         {
-            RoadStatus roadStatus = new RoadStatus();
-            roadStatus.DisplayName = "A2";
-            roadStatus.StatusSeverity = "Good";
-            roadStatus.StatusSeverityDescription = "No Exceptional Delays";
+            var roadStatus = ValidUserTestData_SucessData();
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
-            var message = @"The status of the A2 is as follows\r\n Road Status is Good\r\n Road Status Description is No Exceptional Delays\r\n";
+            var message = @"The status of the A2 is as follows"+ System.Environment.NewLine+"Road Status is Good"+System.Environment.NewLine+"Road Status Description is No Exceptional Delays"+ System.Environment.NewLine;
             _inputOperations.PrintRoadStatusDetails(roadStatus);
-            // Console.WriteLine add new line character along with text
-            Assert.AreEqual(message, stringWriter.ToString());
+            var consoleOutput = stringWriter.ToString();
+            Assert.AreEqual(message, consoleOutput);
         }
+        #endregion
+
+        #region API Call Tests
+
+        [Test]
+        public void RoadStatusCheck_WithValidRoadCode()
+        {
+            var roadCode = "A2";
+            var roadStatus = _roadStatusChecker.GetRoadStatus(roadCode).GetAwaiter().GetResult();
+            Assert.IsTrue(roadStatus.HttpsStatus);
+        }
+
         #endregion
 
     }
