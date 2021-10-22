@@ -32,14 +32,14 @@ namespace TFLRoadStatus.CoreOperations
         public async Task<RoadStatus> GetRoadStatus(string roadId)
         {
             //Setting http client details
-            HttpClient.BaseAddress = new Uri(Constants.ApiBaseAddress);
+            HttpClient.BaseAddress = new Uri(AppConstants.ApiBaseAddress);
             HttpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
             RoadStatus roadStatus = new RoadStatus();
             // Uri for Api call
-            string apiUrl = string.Format("{0}{1}?app_id={2}&amp;app_key={3}", Constants.ApiBaseAddress, roadId,
-                Constants.AppKey, Constants.TflApiKey);
+            string apiUrl = string.Format("{0}{1}?app_id={2}&amp;app_key={3}", AppConstants.ApiBaseAddress, roadId,
+                AppConstants.AppKey, AppConstants.TflApiKey);
 
             try
             {

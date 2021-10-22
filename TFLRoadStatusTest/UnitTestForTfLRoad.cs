@@ -90,6 +90,16 @@ namespace TFLRoadStatusTest
             Assert.IsTrue(roadStatus.HttpsStatus);
         }
 
+        [Test]
+        public void RoadStatusCheck_WithInvalidRoadCode()
+        {
+            TfLRoadStatusChecker checker = new TfLRoadStatusChecker();
+            var baseUrlAddress = Constants.ApiBaseAddress;
+            var roadCode = "AA2";
+            var roadStatus = checker.GetRoadStatus(roadCode).GetAwaiter().GetResult();
+            Assert.IsFalse(roadStatus.HttpsStatus);
+        }
+
         #endregion
 
     }
