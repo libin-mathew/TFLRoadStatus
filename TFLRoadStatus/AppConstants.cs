@@ -1,16 +1,19 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TFLRoadStatus.CoreOperations.Models;
 
 namespace TFLRoadStatus
 {
+    /// <summary>
+    /// Static class to hold the constants.
+    /// </summary>
     public static class AppConstants
     {
         static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
         static IConfiguration configSection = configuration.GetSection(nameof(AppSettings));
 
+        /// <summary>
+        /// Static Constructor
+        /// </summary>
         static AppConstants()
         {
             TflApiKey = configSection["TFLApiKey"];
