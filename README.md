@@ -10,10 +10,11 @@ Install the following:
 ### Additional Nuget Packages
 Requires following Nuget Packages to run the application.
 - Newtonsoft.Json 13.0.1
+- Microsoft.Extensions.Configuration
 
 ### Configuring TFL API Information
 Follow the steps:
-- Open the project in Visual Studio and locate App.config file under TFLRoadStatus project.
+- Open the project in Visual Studio and locate appsettings.json file under TFLRoadStatus project.
 - Configure the file with your TFL API Key by updating the settings key value of TFLApiKey.
 - Configure the file with your Application Key by updating the settings key value of AppKey.
 
@@ -32,3 +33,9 @@ Follow the steps:
 - Provide the Road code and hit enter. The application will List the Road Status and Status Description.
 - Application will return an informative error if the user provides an invalid Road Code.
 - To fetch the exit code in window machine, run command ***echo Exit Code is %errorlevel%***
+
+### How to Run Unit Test
+Project TFLRoadStatusTest constains the unit test class. Unit Project is using NUnit Test package.
+Follow the steps:
+- Open the Test Explorer.
+- Run the Test Methods
